@@ -366,7 +366,7 @@ export default function CybersecPortfolio() {
               
               <div className="space-y-6">
                 <p className="text-gray-300 text-xl leading-relaxed">
-                  Oh, you're one of those people who actually checks if I can code? 
+                  Oh , you're one of those people who actually checks if I can code? 
                   Fair enough...
                 </p>
                 
