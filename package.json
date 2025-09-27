@@ -1,13 +1,14 @@
 {
   "name": "portfolio",
-  "private": true,
   "version": "0.0.0",
+  "homepage": "https://sevilworks.github.io/portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.544.0",
