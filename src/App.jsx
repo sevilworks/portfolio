@@ -4,15 +4,16 @@ import { Github, Linkedin, Mail, FileDown, Terminal, Shield, Code, ExternalLink,
 export default function CybersecPortfolio() {
   const [terminalText, setTerminalText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedCard, setExpandedCard] = useState("whoami");
   
   const terminalCommands = [
-    'root@aromal:~$ whoami',
-    'aromal_anil',
-    'root@aromal:~$ cat skills.txt',
+    'root@sevil:~$ whoami',
+    'amen_allah_amari',
+    'root@sevil:~$ cat skills.txt',
     'Web Development | Cybersecurity | Penetration Testing',
-    'root@aromal:~$ sudo apt-get install portfolio',
+    'root@sevil:~$ sudo apt-get install portfolio',
     'Portfolio installed successfully ✓',
-    'root@aromal:~$ ./run_portfolio.sh',
+    'root@sevil:~$ ./run_portfolio.sh',
     'Loading portfolio...',
   ];
 
@@ -60,6 +61,76 @@ export default function CybersecPortfolio() {
     }
   ];
 
+  const cards = [
+    {
+      id: 'whoami',
+      title: 'Who Am I?',
+      icon: Shield,
+      color: 'cyan',
+      content: (
+        <div className="text-center space-y-4">
+          <p className="text-gray-300 leading-relaxed">
+            Hi! I'm just a guy who thinks passwords like "123456" are not cool<br/>
+            I make websites that don't break (most of the time) and occasionally pretend to be a hacker 
+            by typing random commands in terminal windows. 
+          </p>
+          
+          <p className="text-gray-300 leading-relaxed">
+            When I'm not staring at code for 12 hours straight, you can find me wondering why 
+            my code works on my machine but breaks in production
+          </p>
+          
+          <div className="flex justify-center space-x-6 text-cyan-400 mt-6">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-4 h-4" />
+              <span className="text-sm">Security Enthusiast</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Code className="w-4 h-4" />
+              <span className="text-sm">Bug Creator & Destroyer</span>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'projects',
+      title: 'Wanna See My Projects?',
+      icon: Code,
+      color: 'purple',
+      content: (
+        <div className="text-center space-y-4">
+          <p className="text-gray-300 leading-relaxed">
+            Oh, you're one of those people who actually checks if I can code? 
+            Fair enough... 
+          </p>
+          
+          <p className="text-gray-300 leading-relaxed">
+            All my digital masterpieces (and embarrassing early commits) live on GitHub. 
+            Go ahead, judge my variable naming skills!
+          </p>
+          
+          <div className="pt-4">
+            <a 
+              href="https://github.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all font-semibold group"
+            >
+              <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              <span>Check Out My GitHub</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+          
+          <p className="text-xs text-gray-400 pt-2">
+            Warning: Contains traces of coffee-fueled coding sessions ☕
+          </p>
+        </div>
+      )
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
       {/* Matrix-like background effect */}
@@ -75,7 +146,7 @@ export default function CybersecPortfolio() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-xl font-bold text-cyan-400">
-              <span className="text-red-400">&lt;</span>Aromal<span className="text-red-400">&gt;</span>
+              <span className="text-red-400">&lt;</span>Sevil<span className="text-red-400">&gt;</span>
             </div>
             <div className="flex space-x-8">
               <button className="bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all">
@@ -94,7 +165,7 @@ export default function CybersecPortfolio() {
             <div className="space-y-4">
               <p className="text-cyan-400 font-mono">Hi There</p>
               <h1 className="text-5xl font-bold leading-tight">
-                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">Aromal Anil</span>
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">Amen Allah Amari</span>
               </h1>
               <p className="text-xl text-gray-300">I am a Web Developer & Cybersecurity Enthusiast</p>
             </div>
@@ -147,11 +218,11 @@ export default function CybersecPortfolio() {
         {/* Desktop Layout */}
         <div className="hidden lg:grid max-w-7xl mx-auto px-6 grid-cols-2 gap-12 items-start">
           {/* Left Side - Hero Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 mt-16"> {/* Added margin-top for more gap */}
             <div className="space-y-4">
               <p className="text-cyan-400 font-mono">Hi There</p>
               <h1 className="text-6xl font-bold leading-tight">
-                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">Aromal Anil</span>
+                I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">Amen Allah Amari</span>
               </h1>
               <p className="text-xl text-gray-300">I am a Web Developer & Cybersecurity Enthusiast</p>
             </div>
@@ -201,69 +272,46 @@ export default function CybersecPortfolio() {
           </div>
 
           {/* Right Side - Interactive Cards Desktop */}
-          <div className="relative h-96 group">
-            {/* About Card - Default Visible */}
-            <div className="absolute inset-0 bg-gray-900/50 rounded-2xl border border-cyan-500/30 p-8 backdrop-blur-lg transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
-              <h2 className="text-3xl font-bold text-cyan-400 text-center mb-6">Who Am I? 🤔</h2>
+          <div className="relative mt-16 space-y-6"> {/* Added margin-top and spacing */}
+            {cards.map((card) => (
+  <div
+    key={card.id}
+    className={`bg-gray-900/50 rounded-2xl border ${
+      card.color === 'cyan' ? 'border-cyan-500/30' : 'border-purple-500/30'
+    } p-6 backdrop-blur-lg transition-all duration-500 cursor-pointer ${
+      expandedCard === card.id 
+        ? 'h-auto opacity-100 scale-100' 
+        : 'h-20 opacity-80 hover:opacity-90 hover:scale-105'
+    }`}
+    onMouseEnter={() => setExpandedCard(card.id)}
+  >
               
-              <div className="text-center space-y-4">
-                <p className="text-gray-300 leading-relaxed">
-                  Hi! I'm just a guy who thinks passwords like "123456" are not cool 😎<br/>
-                  I make websites that don't break (most of the time) and occasionally pretend to be a hacker 
-                  by typing random commands in terminal windows. 
-                </p>
-                
-                <p className="text-gray-300 leading-relaxed">
-                  When I'm not staring at code for 12 hours straight, you can find me wondering why 
-                  my code works on my machine but breaks in production 🤷‍♂️
-                </p>
-                
-                <div className="flex justify-center space-x-6 text-cyan-400 mt-6">
-                  <div className="flex items-center space-x-2">
-                    <Shield className="w-4 h-4" />
-                    <span className="text-sm">Security Enthusiast</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Code className="w-4 h-4" />
-                    <span className="text-sm">Bug Creator & Destroyer</span>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className={`text-2xl font-bold ${
+                    card.color === 'cyan' ? 'text-cyan-400' : 'text-purple-400'
+                  }`}>
+                    {card.title}
+                  </h2>
+                  <div className={`p-2 rounded-full ${
+                    card.color === 'cyan' ? 'bg-cyan-500/20' : 'bg-purple-500/20'
+                  }`}>
+                    <card.icon className={`w-5 h-5 ${
+                      card.color === 'cyan' ? 'text-cyan-400' : 'text-purple-400'
+                    }`} />
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Projects Card - Visible on Hover */}
-            <div className="absolute inset-0 bg-gray-900/50 rounded-2xl border border-purple-500/30 p-8 backdrop-blur-lg transition-all duration-500 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100">
-              <h2 className="text-3xl font-bold text-purple-400 text-center mb-6">Wait... You Want to See My Projects? 👀</h2>
-              
-              <div className="text-center space-y-4">
-                <p className="text-gray-300 leading-relaxed">
-                  Oh, you're one of those people who actually checks if I can code? 
-                  Fair enough... 🕵️‍♂️
-                </p>
                 
-                <p className="text-gray-300 leading-relaxed">
-                  All my digital masterpieces (and embarrassing early commits) live on GitHub. 
-                  Go ahead, judge my variable naming skills! 😅
-                </p>
-                
-                <div className="pt-4">
-                  <a 
-                    href="https://github.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all font-semibold group"
-                  >
-                    <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                    <span>Check Out My GitHub</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                <div className={`transition-all duration-500 ${
+                  expandedCard === card.id 
+                    ? 'opacity-100 max-h-96' 
+                    : 'opacity-0 max-h-0 overflow-hidden'
+                }`}>
+                  {card.content}
                 </div>
                 
-                <p className="text-xs text-gray-400 pt-2">
-                  Warning: Contains traces of coffee-fueled coding sessions ☕
-                </p>
+                
               </div>
-            </div>
+            ))}
           </div>
         </div>
         
@@ -276,18 +324,18 @@ export default function CybersecPortfolio() {
       <section id="about" className="lg:hidden py-20 bg-black/20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-gray-900/50 rounded-2xl border border-cyan-500/30 p-8 backdrop-blur-lg">
-            <h2 className="text-4xl font-bold text-cyan-400 text-center mb-8">Who Am I? 🤔</h2>
+            <h2 className="text-4xl font-bold text-cyan-400 text-center mb-8">Who Am I?</h2>
             
             <div className="text-center space-y-6">
               <p className="text-gray-300 text-lg leading-relaxed">
-                Hi! I'm just a guy who thinks passwords like "123456" are not cool 😎<br/>
+                Hi! I'm just a guy who thinks passwords like "123456" are not cool<br/>
                 I make websites that don't break (most of the time) and occasionally pretend to be a hacker 
                 by typing random commands in terminal windows. 
               </p>
               
               <p className="text-gray-300 text-lg leading-relaxed">
                 When I'm not staring at code for 12 hours straight, you can find me wondering why 
-                my code works on my machine but breaks in production 🤷‍♂️
+                my code works on my machine but breaks in production 
               </p>
               
               <div className="flex justify-center space-x-8 text-cyan-400 mt-8">
@@ -314,17 +362,17 @@ export default function CybersecPortfolio() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center">
             <div className="bg-gray-900/50 rounded-2xl border border-cyan-500/30 p-12 backdrop-blur-lg">
-              <h2 className="text-4xl font-bold text-cyan-400 mb-8">Wait... You Want to See My Projects? 👀</h2>
+              <h2 className="text-4xl font-bold text-cyan-400 mb-8">Wanna See My Projects?</h2>
               
               <div className="space-y-6">
                 <p className="text-gray-300 text-xl leading-relaxed">
                   Oh, you're one of those people who actually checks if I can code? 
-                  Fair enough... 🕵️‍♂️
+                  Fair enough...
                 </p>
                 
                 <p className="text-gray-300 text-lg leading-relaxed">
                   All my digital masterpieces (and embarrassing early commits) live on GitHub. 
-                  Go ahead, judge my variable naming skills! 😅
+                  Go ahead, judge my variable naming skills!
                 </p>
                 
                 <div className="pt-6">
@@ -384,7 +432,7 @@ export default function CybersecPortfolio() {
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-6 text-center text-gray-400">
-          <p>&copy; 2024 Aromal Anil. Secured by design.</p>
+          <p>&copy; 2025 Sevil. Secured by design.</p>
         </div>
       </footer>
 
