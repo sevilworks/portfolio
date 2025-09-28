@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="bg-black-100 p-6 rounded-xl shadow-lg mt-6 w-full">
             <h2 className="text-xl font-bold text-white mb-2">In Short</h2>
             <p className="text-secondary text-base">
-              IT Student passionate about ethical hacking, AI, and neural language processing. Eager to join innovative teams and contribute with my skills and drive.
+              IT Student passionate about Web Development, Ethical hacking, and Penetration Testing. Eager to join innovative teams and contribute with my skills and drive.
             </p>
           </div>
         </div>

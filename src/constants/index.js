@@ -61,33 +61,23 @@ export const technologies = [
 
 export const experiences = [
   {
-    title: "AI/ML Intern",
-    company_name: "EduSkill Foundation | AWS Academy | AICTE",
+    title: "Web Development  Wordpress | Intern",
+    company_name: "Etnafes",
     icon: eduskill,
     iconBg: "#161329",
-    date: "Sep 2023 - Nov 2023",
+    date: "Jan 2024 - Feb 2024",
     points: [
-      "Acquired hands-on knowledge of AWS Cloud Foundation, delving into cloud infrastructure, services, and deployment.",
+      "Acquired hands-on experience with WordPress CMS, building websites using Elementor and optimizing content for SEO.",
     ],
   },
   {
-    title: "Mathwork Ai Virtual Intern",
-    company_name: "Mathwork | AICTE",
+    title: "Web Development MERN stack | Intern",
+    company_name: "Creo Digital",
     icon: mathwork,
     iconBg: "#161329",
-    date: "May 2023 - Sep 2023",
+    date: "Jan 2024 - Feb 2024",
     points: [
-      "Completed virtual internship, gaining a strong foundation in MATLAB, including data analysis and processing."
-    ],
-  },
-  {
-    title: "Artificial Intelligence Intern",
-    company_name: "Edunet Foundation | IBM SkillsBuild | AICTE",
-    icon: edunet,
-    iconBg: "#161329",
-    date: "June 2023 - July 2023",
-    points: [
-      "Leveraged 12 regression algorithms to attain precise outcomes in analyzing and predicting mental fitness levels across.",
+      "Completed internship project using the MERN stack, developing a full-featured schooling web application and collaborating in an agile team environment."
     ],
   },
 ];
