@@ -35,7 +35,7 @@ const About = () => {
         </div>
         {/* Known Frameworks & Technologies */}
         <div className="md:w-1/2 w-full">
-          <h3 className="text-xl font-bold text-white mb-4">Known Frameworks & Technologies</h3>
+          <h3 className="text-xl font-bold text-white mb-4">Frameworks & Technologies</h3>
           <ul className="flex flex-wrap gap-4">
             {technologies.map((tech, idx) => (
               <li key={idx} className="flex items-center gap-2 bg-black-100 p-2 rounded shadow">
