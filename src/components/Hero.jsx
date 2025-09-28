@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import Typewriter from "typewriter-effect";
+import githubIcon from "../assets/github.png";
+import linkedinIcon from "../assets/linkedin.png";
+import emailIcon from "../assets/email.png";
 
 const Hero = () => {
   // Terminal animation logic
@@ -82,15 +85,14 @@ const Hero = () => {
           </div>
           {/* Social Media & Links Card */}
           <div className="flex flex-row flex-wrap gap-4 mt-6 justify-center">
-            {/* Example social media icons and links */}
             <a href="https://github.com/sevilworks" target="_blank" rel="noopener noreferrer" className="bg-black-100 p-3 rounded-xl shadow flex items-center justify-center hover:bg-[#333] transition">
-              <img src="/src/assets/github.png" alt="GitHub" className="w-7 h-7" />
+              <img src={githubIcon} alt="GitHub" className="w-7 h-7" />
             </a>
             <a href="https://linkedin.com/in/sevildoes" target="_blank" rel="noopener noreferrer" className="bg-black-100 p-3 rounded-xl shadow flex items-center justify-center hover:bg-[#0077b5] transition">
-              <img src="/src/assets/linkedin.png" alt="LinkedIn" className="w-7 h-7" />
+              <img src={linkedinIcon} alt="LinkedIn" className="w-7 h-7" />
             </a>
             <a href="mailto:esta3969@gmail.com" className="bg-black-100 p-3 rounded-xl shadow flex items-center justify-center hover:bg-[#c71610] transition">
-              <img src="/src/assets/email.png" alt="Email" className="w-7 h-7" />
+              <img src={emailIcon} alt="Email" className="w-7 h-7" />
             </a>
             {/* Add more platforms as needed */}
           </div>
